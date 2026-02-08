@@ -1,0 +1,3 @@
+/home/ubuntu/MyFile/GomukuServer/GomukuServer/build/CMakeFiles/Gomuku.dir
+/home/ubuntu/MyFile/GomukuServer/GomukuServer/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/MyFile/GomukuServer/GomukuServer/build/CMakeFiles/rebuild_cache.dir
