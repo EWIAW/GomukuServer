@@ -52,22 +52,31 @@ TcpConnection::~TcpConnection()
 
 void TcpConnection::send(const std::string &buf) // 发送数据
 {
+    // LOG_DEBUG("1");
     if (_state_ == kConnected)
     {
+        // LOG_DEBUG("2");
+
         if (_loop_->isInLoopThread())
         {
-            sendInLoop(buf.c_str(), buf.size());
+            // LOG_DEBUG("3");
+            sendInLoop(buf);
         }
         else
         {
-            _loop_->runInLoop(std::bind(&TcpConnection::sendInLoop, this, buf.c_str(), buf.size()));
+            // LOG_DEBUG("4");
+            // _loop_->runInLoop(std::bind(&TcpConnection::sendInLoop, this, buf.c_str(), buf.size()));
+            _loop_->runInLoop(std::bind(&TcpConnection::sendInLoop, this, buf));
         }
     }
 }
 
 // 在subloop里面发送数据
-void TcpConnection::sendInLoop(const void *data, size_t len)
+void TcpConnection::sendInLoop(const std::string &buf)
 {
+    const char* data = buf.c_str();
+    int len = buf.size();
+
     // 发送数据的过程可以分为两种情况：可以直接往sockfd写数据 或 往Buffer里写数据
     ssize_t nwrote = 0;     // 已经写入的数据的长度
     size_t remaining = len; // 未写入的数据的长度

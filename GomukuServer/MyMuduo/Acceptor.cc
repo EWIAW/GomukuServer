@@ -14,7 +14,8 @@ static int createNonblocking()
     int sockfd = ::socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK | SOCK_CLOEXEC, 0);
     if (sockfd < 0)
     {
-        LOG_FATAL("listen socket create error , errno : %d , reason : %s", errno, strerror(errno));
+        // LOG_FATAL("listen socket create error , errno : %d , reason : %s", errno, strerror(errno));
+        LOG_FATAL("listen socket 创建失败 , 错误码 : %d , 原因 : %s", errno, strerror(errno));
     }
     return sockfd;
 }
@@ -28,8 +29,6 @@ Acceptor::Acceptor(EventLoop *loop, const InetAddress &listenAddr, bool reusepor
     _acceptSocket_.setReuseAddr(true);      // 设置是否重用地址
     _acceptSocket_.setReusePort(reuseport); // 设置是否重用端口
     _acceptSocket_.bindAddress(listenAddr); // bind
-    // TcpServer::start() Acceptor.listen  有新用户的连接，要执行一个回调（connfd=》channel=》subloop）
-    // baseLoop => acceptChannel_(listenfd) =>
     _acceptChannel_.SetReadCallback(std::bind(&Acceptor::handlerRead, this));
 }
 
@@ -63,10 +62,12 @@ void Acceptor::handlerRead()
     }
     else
     {
-        LOG_ERROR("accept error , errno : %d , reason : %s", errno, strerror(errno));
+        // LOG_ERROR("accept error , errno : %d , reason : %s", errno, strerror(errno));
+        LOG_ERROR("accept 失败 , 错误码 : %d , 原因 : %s", errno, strerror(errno));
         if (errno == EMFILE)
         {
-            LOG_ERROR("sockfd reached limit"); // 说明可以建立的连接已达上限
+            // LOG_ERROR("sockfd reached limit"); // 说明可以建立的连接已达上限
+            LOG_ERROR("可以创建连接已经到达上线"); // 说明可以建立的连接已达上限
         }
     }
 }

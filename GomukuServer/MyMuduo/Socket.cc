@@ -18,9 +18,11 @@ void Socket::bindAddress(const InetAddress &localaddr)
     int ret = bind(_sockfd_, (sockaddr *)localaddr.getSockAddr(), sizeof(sockaddr_in));
     if (ret == -1)
     {
-        LOG_FATAL("bind error , errno : %d , reason : %s", errno, strerror(errno));
+        // LOG_FATAL("bind error , errno : %d , reason : %s", errno, strerror(errno));
+        LOG_FATAL("bind 失败 , 错误码 : %d , 原因 : %s", errno, strerror(errno));
     }
-    LOG_DEBUG("bind listenfd is success");
+    // LOG_DEBUG("bind listenfd is success");
+    LOG_DEBUG("bind listenfd 成功");
 }
 
 void Socket::listen()
@@ -28,9 +30,11 @@ void Socket::listen()
     int ret = ::listen(_sockfd_, 1024); // 在muduo库源码中，第二个参数给的是SOMAXCONN，这个值是4096，在以前是128，如果给的值大于SOMAXCONN，则直接截断到该值
     if (ret == -1)
     {
-        LOG_FATAL("listen error , errno : %d , reason : %s", errno, strerror(errno));
+        // LOG_FATAL("listen error , errno : %d , reason : %s", errno, strerror(errno));
+        LOG_FATAL("listen 失败 , 错误码 : %d , 原因 : %s", errno, strerror(errno));
     }
-    LOG_DEBUG("listenfd is listening");
+    // LOG_DEBUG("listenfd is listening");
+    LOG_DEBUG("listenfd 成功");
 }
 
 // 参数为 输出型参数
@@ -52,7 +56,7 @@ void Socket::shutdownWrite()
     int ret = shutdown(_sockfd_, SHUT_WR);
     if (ret < 0)
     {
-        LOG_ERROR("shutdownWrite error : %d , reason : %s", errno, strerror(errno));
+        LOG_ERROR("shutdownWrite 失败 , 错误码 : %d , 原因 : %s", errno, strerror(errno));
     }
 }
 

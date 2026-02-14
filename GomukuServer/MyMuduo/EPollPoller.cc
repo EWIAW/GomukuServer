@@ -20,7 +20,8 @@ EPollPoller::EPollPoller(EventLoop *loop)
 {
     if (_epollfd_ < 0)
     {
-        LOG_FATAL("epoll_create failed , errno : %d , reason : %s", errno, strerror(errno));
+        // LOG_FATAL("epoll_create failed , errno : %d , reason : %s", errno, strerror(errno));
+        LOG_FATAL("epoll_create 失败 , 错误码 : %d , 原因 : %s", errno, strerror(errno));
     }
 }
 
@@ -47,8 +48,10 @@ Timestamp EPollPoller::poll(int timeoutMs, ChannelLists *activeChannel)
         }
         else // 如果不是定时器的fd就绪，则可以输出日志
         {
-            LOG_DEBUG("func = %s , EventList fd total count : %d", __FUNCTION__, _events_.size());
-            LOG_INFO("epoll_wait success , %d event is happen", numEvents);
+            // LOG_DEBUG("func = %s , EventList fd total count : %d", __FUNCTION__, _events_.size());
+            LOG_DEBUG("func = %s , EventList fd 总大小 : %d", __FUNCTION__, _events_.size());
+            // LOG_INFO("epoll_wait success , %d event is happen", numEvents);
+            LOG_INFO("epoll_wait 成功 , %d 个事件发生", numEvents);
         }
         fillActiveChannel(numEvents, activeChannel);
         // 给_events_扩容，说明此时就绪的事件>=容量，需要扩容
@@ -59,14 +62,16 @@ Timestamp EPollPoller::poll(int timeoutMs, ChannelLists *activeChannel)
     }
     else if (numEvents == 0)
     {
-        LOG_INFO("func = %s , time out , NO event happen !!!", __FUNCTION__);
+        // LOG_INFO("func = %s , time out , NO event happen !!!", __FUNCTION__);
+        LOG_INFO("func = %s , epoll_wait超时 , 没有时间发生", __FUNCTION__);
     }
     else
     {
         if (saveErrno != EINTR) // 如果不是被信号中断的
         {
             errno = saveErrno;
-            LOG_ERROR("epoll_wait failed , errno : %d , reason : %s", errno, strerror(errno));
+            // LOG_ERROR("epoll_wait failed , errno : %d , reason : %s", errno, strerror(errno));
+            LOG_ERROR("epoll_wait 失败 , 错误码 : %d , 原因 : %s", errno, strerror(errno));
         }
     }
     return now;
@@ -148,11 +153,13 @@ void EPollPoller::update(int operation, Channel *channel)
     {
         if (operation == EPOLL_CTL_DEL)
         {
-            LOG_ERROR("epoll delete failed!!!");
+            // LOG_ERROR("epoll delete failed!!!");
+            LOG_ERROR("epoll delete 失败");
         }
         else
         {
-            LOG_FATAL("epoll add/mod failed!!!");
+            // LOG_FATAL("epoll add/mod failed!!!");
+            LOG_FATAL("epoll add/mod 失败");
         }
     }
 }

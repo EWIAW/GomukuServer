@@ -17,7 +17,8 @@ EventLoopThreadPool::~EventLoopThreadPool()
 
 void EventLoopThreadPool::start(const ThreadInitCallback &cb)
 {
-    LOG_DEBUG("EventLoopThreadPool::start , numsThread : %d", _numsThread_);
+    // LOG_DEBUG("EventLoopThreadPool::start , numsThread : %d", _numsThread_);
+    LOG_DEBUG("EventLoopThreadPool::start , 线程数量 : %d", _numsThread_);
     _started_ = true;
 
     for (int i = 0; i < _numsThread_; i++)

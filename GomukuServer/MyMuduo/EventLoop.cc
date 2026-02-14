@@ -16,7 +16,8 @@ static int createEventFd() // ！！！
     int evtfd = eventfd(0, EFD_NONBLOCK | EFD_CLOEXEC); // 0代表初始计数器为0
     if (evtfd < 0)
     {
-        LOG_DEBUG("create eventfd failed , errno : %d , reason : %s", errno, strerror(errno));
+        // LOG_DEBUG("create eventfd failed , errno : %d , reason : %s", errno, strerror(errno));
+        LOG_DEBUG("创建 eventfd 失败 , 错误码 : %d , 原因 : %s", errno, strerror(errno));
     }
     return evtfd;
 }
@@ -32,10 +33,12 @@ EventLoop::EventLoop()
       _callingPendingFunctors_(false),
       _timer_wheel_(this)
 {
-    LOG_DEBUG("EventLoop create %p in thread %d", this, _threadId_);
+    // LOG_DEBUG("EventLoop create %p in thread %d", this, _threadId_);
+    LOG_DEBUG("EventLoop  创建地址 : %p ,  在线程 %d 中", this, _threadId_);
     if (t_loopInThisThread != nullptr)
     {
-        LOG_FATAL("Another EventLoop %d exists in this thread %d", t_loopInThisThread, _threadId_);
+        // LOG_FATAL("Another EventLoop %d exists in this thread %d", t_loopInThisThread, _threadId_);
+        LOG_FATAL("别的 EventLoop %d 已经存在与线程 %d", t_loopInThisThread, _threadId_);
     }
     else
     {
@@ -57,7 +60,8 @@ void EventLoop::loop() // 开启事件循环
 {
     _looping_ = true;
     _quit_ = false;
-    LOG_INFO("EventLoop %p start looping", this);
+    // LOG_INFO("EventLoop %p start looping", this);
+    LOG_INFO("EventLoop %p 开始循环", this);
     while (!_quit_)
     {
         _activeChannels_.clear();
@@ -68,7 +72,8 @@ void EventLoop::loop() // 开启事件循环
         }
         doPendingFunctor();
     }
-    LOG_INFO("EventLoop %p stop looping", this);
+    // LOG_INFO("EventLoop %p stop looping", this);
+    LOG_INFO("EventLoop %p 停止循环", this);
     _looping_ = false;
 }
 
@@ -117,7 +122,8 @@ void EventLoop::handlerRead()
     ssize_t n = read(_wakeupFd_, &one, sizeof(one));
     if (n != sizeof(one))
     {
-        LOG_ERROR("read the _wakeupFd_ error");
+        // LOG_ERROR("read the _wakeupFd_ error");
+        LOG_ERROR("读取 _wakeupFd_ 失败");
     }
 }
 
@@ -128,7 +134,8 @@ void EventLoop::wakeup()
     ssize_t n = write(_wakeupFd_, &one, sizeof(one));
     if (n != sizeof(one))
     {
-        LOG_ERROR("write the _wakeupFd_ error");
+        // LOG_ERROR("write the _wakeupFd_ error");
+        LOG_ERROR("写入 _wakeupFd_ 失败");
     }
 }
 

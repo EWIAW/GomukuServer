@@ -78,7 +78,7 @@ private:
     void handleEvent(); // 如果触发任意事件，则刷新定时任务
 
     // 在这个TcpConnection所属的EventLoop中发送数据
-    void sendInLoop(const void *message, size_t len);
+    void sendInLoop(const std::string &buf);
     void shutdownInLoop(); // 关闭连接
 
     void enableInactiveReleaseInLoop(int timeouts); // 开启非活跃连接超时机制
