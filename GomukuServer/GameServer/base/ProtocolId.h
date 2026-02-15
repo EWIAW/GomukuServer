@@ -13,9 +13,12 @@ enum ProtocolId
     LOGIN_ACK = 1004,    // 登录响应
 
     // // 匹配模块 2000-2999
-    // MATCH_START = 2001,   // 发起匹配
-    // MATCH_CANCEL = 2002,  // 取消匹配
-    // MATCH_SUCCESS = 2003, // 匹配成功推送
+    MATCH_START_REQ = 2001,  // 发起匹配请求
+    MATCH_START_ACK = 2002,  // 发起匹配响应
+    MATCH_CANCEL_REQ = 2003, // 取消匹配请求
+    MATCH_CANCEL_ACK = 2004, // 取消匹配响应
+
+    MATCH_PUSH = 2006, // 匹配结果推送
 
     // // 对战模块 3000-3999
     // CHESS_DOWN = 3001, // 落子请求
@@ -23,5 +26,6 @@ enum ProtocolId
     // AME_OVER = 3003,  // 对局结束推送
 
     // // 聊天模块 4000-4999
-    // PROTO_ID_GAME_CHAT = 4001 // 局内聊天
+    GAME_CHAT_REQ = 4001, // 局内聊天请求
+    GAME_CHAT_ACK = 4002, // 局内聊天响应
 };

@@ -17,7 +17,7 @@ GameServer::GameServer(EventLoop *loop, const InetAddress &addr, const std::stri
     _server.setMessageCallback(std::bind(&GameServer::onMessage, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 
     // 设置合适的loop线程数量 loopthread
-    _server.setThreadNum(4);
+    _server.setThreadNum(3);
 
     // server_.setEnableInactiveRelease(10);
 }

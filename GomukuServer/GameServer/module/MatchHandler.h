@@ -33,5 +33,14 @@ private:
 class MatchHandler
 {
 public:
-    void onMatch(const TcpConnectionPtr &conn, const Json::Value &req);
+    MatchHandler();
+
+    void onMatch(const TcpConnectionPtr &conn, const Json::Value &req);       // 处理匹配请求
+    void onCancelMatch(const TcpConnectionPtr &conn, const Json::Value &req); // 处理取消匹配请求
+
+private:
+    MatchPool m_matchPool;
 };
+
+// 全局初始化：确保启动时注册协议
+extern MatchHandler g_MatchHandler;

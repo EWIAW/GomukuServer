@@ -201,6 +201,30 @@ home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/ConnManager.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gomuku.dir/build.make CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/ConnManager.cc.s
 .PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/ConnManager.cc.s
 
+home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.o: home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.o
+.PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.o
+
+# target to build an object file
+home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gomuku.dir/build.make CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.o
+.PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.o
+
+home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.i: home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.i
+.PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.i
+
+# target to preprocess a source file
+home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gomuku.dir/build.make CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.i
+.PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.i
+
+home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.s: home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.s
+.PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.s
+
+# target to generate assembly for a file
+home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gomuku.dir/build.make CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.s
+.PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.s
+
 home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.o: home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc.o
 .PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.o
 
@@ -224,6 +248,54 @@ home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.s: h
 home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gomuku.dir/build.make CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc.s
 .PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc.s
+
+home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.o: home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.o
+.PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.o
+
+# target to build an object file
+home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gomuku.dir/build.make CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.o
+.PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.o
+
+home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.i: home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.i
+.PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.i
+
+# target to preprocess a source file
+home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gomuku.dir/build.make CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.i
+.PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.i
+
+home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.s: home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.s
+.PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.s
+
+# target to generate assembly for a file
+home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gomuku.dir/build.make CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.s
+.PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.s
+
+home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.o: home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.o
+.PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.o
+
+# target to build an object file
+home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gomuku.dir/build.make CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.o
+.PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.o
+
+home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.i: home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.i
+.PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.i
+
+# target to preprocess a source file
+home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gomuku.dir/build.make CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.i
+.PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.i
+
+home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.s: home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.s
+.PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.s
+
+# target to generate assembly for a file
+home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Gomuku.dir/build.make CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.s
+.PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.s
 
 home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.o: home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.cc.o
 .PHONY : home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.o
@@ -819,9 +891,18 @@ help:
 	@echo "... home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/ConnManager.o"
 	@echo "... home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/ConnManager.i"
 	@echo "... home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/ConnManager.s"
+	@echo "... home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.o"
+	@echo "... home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.i"
+	@echo "... home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.s"
 	@echo "... home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.o"
 	@echo "... home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.i"
 	@echo "... home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.s"
+	@echo "... home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.o"
+	@echo "... home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.i"
+	@echo "... home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.s"
+	@echo "... home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.o"
+	@echo "... home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.i"
+	@echo "... home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.s"
 	@echo "... home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.o"
 	@echo "... home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.i"
 	@echo "... home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.s"

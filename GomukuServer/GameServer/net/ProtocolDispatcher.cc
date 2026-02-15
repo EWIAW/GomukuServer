@@ -55,7 +55,7 @@ void ProtocolDispatcher::dispatch(const TcpConnectionPtr &conn, Buffer *buf)
             auto handlerIt = m_handlerMap.find(msgProtocol);
             if (handlerIt != m_handlerMap.end())
             {
-                DLOG("接收消息的大小 : size = %d", size);
+                DLOG("接收实际数据大小 : %d , 有效数据大小 : %d", 4 + size, size);
                 DLOG(root.toStyledString().c_str());
                 handlerIt->second(conn, data);
             }

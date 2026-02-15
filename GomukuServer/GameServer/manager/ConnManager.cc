@@ -66,19 +66,7 @@ void ConnManager::sendMsg(const TcpConnectionPtr &conn, const int &protocol, con
     memcpy(&realmsg[0], &nsize, sizeof(nsize));
     memcpy(&realmsg[4], jsonStr.c_str(), size);
 
-    DLOG("发送消息大小 : %d", size);
+    DLOG("发送实际数据大小 : %d , 有效数据大小 : %d", 4 + size, size);
     DLOG(response.toStyledString().c_str());
     conn->send(realmsg);
 }
-
-// 向指定玩家发送消息
-// void sendMsgToUser(UserId userId, const Json::Value &msg)
-// {
-//     if (!isConnValid(conn))
-//         return;
-//     User *user = g_UserMgr.getUserById(userId);
-//     if (user)
-//     {
-//         sendMsg(user->getConn(), msg);
-//     }
-// }

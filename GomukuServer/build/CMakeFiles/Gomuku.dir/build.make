@@ -391,10 +391,24 @@ CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/ma
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/ConnManager.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/ConnManager.cc -o CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/ConnManager.cc.s
 
+CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.o: CMakeFiles/Gomuku.dir/flags.make
+CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.o: /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc
+CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.o: CMakeFiles/Gomuku.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/MyFile/GomukuServer/GomukuServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.o -MF CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.o.d -o CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.o -c /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc
+
+CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc > CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.i
+
+CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc -o CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.s
+
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc.o: CMakeFiles/Gomuku.dir/flags.make
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc.o: /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc.o: CMakeFiles/Gomuku.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/MyFile/GomukuServer/GomukuServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/MyFile/GomukuServer/GomukuServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc.o -MF CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc.o.d -o CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc.o -c /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc
 
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc.i: cmake_force
@@ -405,10 +419,38 @@ CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/ma
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc -o CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc.s
 
+CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.o: CMakeFiles/Gomuku.dir/flags.make
+CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.o: /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc
+CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.o: CMakeFiles/Gomuku.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/MyFile/GomukuServer/GomukuServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.o -MF CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.o.d -o CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.o -c /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc
+
+CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc > CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.i
+
+CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc -o CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.s
+
+CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.o: CMakeFiles/Gomuku.dir/flags.make
+CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.o: /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc
+CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.o: CMakeFiles/Gomuku.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/MyFile/GomukuServer/GomukuServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.o -MF CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.o.d -o CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.o -c /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc
+
+CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc > CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.i
+
+CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc -o CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.s
+
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.cc.o: CMakeFiles/Gomuku.dir/flags.make
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.cc.o: /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.cc
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.cc.o: CMakeFiles/Gomuku.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/MyFile/GomukuServer/GomukuServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/MyFile/GomukuServer/GomukuServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.cc.o -MF CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.cc.o.d -o CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.cc.o -c /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.cc
 
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.cc.i: cmake_force
@@ -422,7 +464,7 @@ CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/mo
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/UserHandler.cc.o: CMakeFiles/Gomuku.dir/flags.make
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/UserHandler.cc.o: /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/UserHandler.cc
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/UserHandler.cc.o: CMakeFiles/Gomuku.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/MyFile/GomukuServer/GomukuServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/UserHandler.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/MyFile/GomukuServer/GomukuServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/UserHandler.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/UserHandler.cc.o -MF CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/UserHandler.cc.o.d -o CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/UserHandler.cc.o -c /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/UserHandler.cc
 
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/UserHandler.cc.i: cmake_force
@@ -436,7 +478,7 @@ CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/mo
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/GameServer.cc.o: CMakeFiles/Gomuku.dir/flags.make
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/GameServer.cc.o: /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/GameServer.cc
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/GameServer.cc.o: CMakeFiles/Gomuku.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/MyFile/GomukuServer/GomukuServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/GameServer.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/MyFile/GomukuServer/GomukuServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/GameServer.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/GameServer.cc.o -MF CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/GameServer.cc.o.d -o CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/GameServer.cc.o -c /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/GameServer.cc
 
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/GameServer.cc.i: cmake_force
@@ -450,7 +492,7 @@ CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/ne
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/ProtocolDispatcher.cc.o: CMakeFiles/Gomuku.dir/flags.make
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/ProtocolDispatcher.cc.o: /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/ProtocolDispatcher.cc
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/ProtocolDispatcher.cc.o: CMakeFiles/Gomuku.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/MyFile/GomukuServer/GomukuServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/ProtocolDispatcher.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/MyFile/GomukuServer/GomukuServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/ProtocolDispatcher.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/ProtocolDispatcher.cc.o -MF CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/ProtocolDispatcher.cc.o.d -o CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/ProtocolDispatcher.cc.o -c /home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/ProtocolDispatcher.cc
 
 CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/ProtocolDispatcher.cc.i: cmake_force
@@ -486,7 +528,10 @@ Gomuku_OBJECTS = \
 "CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/db/UserDB.cc.o" \
 "CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/main/main.cc.o" \
 "CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/ConnManager.cc.o" \
+"CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.o" \
 "CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc.o" \
+"CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.o" \
+"CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.o" \
 "CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.cc.o" \
 "CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/UserHandler.cc.o" \
 "CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/GameServer.cc.o" \
@@ -518,14 +563,17 @@ Gomuku: CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/Mysql
 Gomuku: CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/db/UserDB.cc.o
 Gomuku: CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/main/main.cc.o
 Gomuku: CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/ConnManager.cc.o
+Gomuku: CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/GameRoomManager.cc.o
 Gomuku: CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/manager/UserManager.cc.o
+Gomuku: CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/model/GameRoomInfo.cc.o
+Gomuku: CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/GameRoomHandler.cc.o
 Gomuku: CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/MatchHandler.cc.o
 Gomuku: CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/module/UserHandler.cc.o
 Gomuku: CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/GameServer.cc.o
 Gomuku: CMakeFiles/Gomuku.dir/home/ubuntu/MyFile/GomukuServer/GomukuServer/GameServer/net/ProtocolDispatcher.cc.o
 Gomuku: CMakeFiles/Gomuku.dir/build.make
 Gomuku: CMakeFiles/Gomuku.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/MyFile/GomukuServer/GomukuServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking CXX executable Gomuku"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/MyFile/GomukuServer/GomukuServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Linking CXX executable Gomuku"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Gomuku.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
