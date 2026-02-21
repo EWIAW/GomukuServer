@@ -17,7 +17,7 @@ GameRoomHandler::GameRoomHandler()
     // 注册游戏房间模块的协议处理函数
     DLOG("初始化GameRoomHandler模块");
     g_ProtoDisp.registerHandler(ProtocolId::GAME_CHAT_REQ, std::bind(&GameRoomHandler::onChat, this, std::placeholders::_1, std::placeholders::_2));
-    // g_ProtoDisp.registerHandler(ProtocolId::GAME_CHAT_REQ,std::bind(&GameRoomHandler::onChess,this,std::placeholders::_1, std::placeholders::_2));
+    g_ProtoDisp.registerHandler(ProtocolId::CHESS_DOWN_REQ, std::bind(&GameRoomHandler::onChess, this, std::placeholders::_1, std::placeholders::_2));
 }
 
 // 聊天处理请求
@@ -39,4 +39,32 @@ void GameRoomHandler::onChat(const TcpConnectionPtr &conn, const Json::Value &re
 // 下棋处理请求
 void GameRoomHandler::onChess(const TcpConnectionPtr &conn, const Json::Value &req)
 {
+    DLOG("进入落子处理函数");
+    Json::Value res;
+    int x = req["x"].asInt();
+    int y = req["y"].asInt();
+
+    uint32_t sendId = g_UserMgr.getUserIdByConn(conn); // 发送方ID
+    uint32_t recvId = g_GameRoomMgr.getRoomByUserId(sendId)->getOtherId(sendId);
+    TcpConnectionPtr sendConn = conn;
+    TcpConnectionPtr recvConn = g_UserMgr.getConnByUserId(recvId);
+
+    std::shared_ptr<GameRoomInfo> room = g_GameRoomMgr.getRoomByUserId(sendId);
+    bool ret = room->handleChess(x, y, sendId);
+
+    res["x"] = x;
+    res["y"] = y;
+    if (ret == true)
+    {
+        res["success"] = true;
+        res["win"] = true;
+        g_ConnMgr.sendMsg(sendConn, ProtocolId::CHESS_DOWN_ACK, res);
+        res["win"] = false;
+        g_ConnMgr.sendMsg(recvConn, ProtocolId::CHESS_DOWN_ACK, res);
+    }
+    else
+    {
+        res["success"] = false;
+        g_ConnMgr.sendMsg(recvConn, ProtocolId::CHESS_DOWN_ACK, res);
+    }
 }

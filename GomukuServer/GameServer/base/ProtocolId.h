@@ -12,7 +12,7 @@ enum ProtocolId
     LOGIN_REQ = 1003,    // 登录请求
     LOGIN_ACK = 1004,    // 登录响应
 
-    // // 匹配模块 2000-2999
+    // 匹配模块 2000-2999
     MATCH_START_REQ = 2001,  // 发起匹配请求
     MATCH_START_ACK = 2002,  // 发起匹配响应
     MATCH_CANCEL_REQ = 2003, // 取消匹配请求
@@ -20,12 +20,13 @@ enum ProtocolId
 
     MATCH_PUSH = 2006, // 匹配结果推送
 
-    // // 对战模块 3000-3999
-    // CHESS_DOWN = 3001, // 落子请求
-    // CHESS_SYNC = 3002, // 棋局同步推送
-    // AME_OVER = 3003,  // 对局结束推送
+    // 对战模块 3000-3999
+    CHESS_DOWN_REQ = 3001, // 落子请求
+    CHESS_DOWN_ACK = 3002, // 落子响应
+                           //    CHESS_SYNC = 3002, // 棋局同步推送
+                           //    AME_OVER = 3003,  // 对局结束推送
 
-    // // 聊天模块 4000-4999
+    // 聊天模块 4000-4999
     GAME_CHAT_REQ = 4001, // 局内聊天请求
     GAME_CHAT_ACK = 4002, // 局内聊天响应
 };

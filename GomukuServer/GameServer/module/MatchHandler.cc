@@ -126,7 +126,9 @@ void MatchPool::matchThread()
                 user2->setState(UserState::GAMING);
                 res["success"] = true;
                 res["reason"] = "匹配成功，准备进入游戏房间";
+                res["color"] = 1;
                 g_ConnMgr.sendMsg(conn1, ProtocolId::MATCH_PUSH, res);
+                res["color"] = 2;
                 g_ConnMgr.sendMsg(conn2, ProtocolId::MATCH_PUSH, res);
             }
         }
