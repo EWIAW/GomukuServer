@@ -23,8 +23,8 @@ enum ProtocolId
     // 对战模块 3000-3999
     CHESS_DOWN_REQ = 3001, // 落子请求
     CHESS_DOWN_ACK = 3002, // 落子响应
-                           //    CHESS_SYNC = 3002, // 棋局同步推送
-                           //    AME_OVER = 3003,  // 对局结束推送
+    EXIT_ROOM_REQ = 3003,  // 退出房间请求
+    EXIT_ROOM_ACK = 3004,  // 退出房间响应
 
     // 聊天模块 4000-4999
     GAME_CHAT_REQ = 4001, // 局内聊天请求

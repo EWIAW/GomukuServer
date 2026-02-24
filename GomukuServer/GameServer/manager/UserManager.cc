@@ -75,3 +75,14 @@ TcpConnectionPtr UserManager::getConnByUserId(uint32_t userId)
     auto it = m_UserId2Conn.find(userId);
     return it != m_UserId2Conn.end() ? it->second : nullptr;
 }
+
+// 设置用户状态
+void UserManager::setUserState(uint32_t userId, UserState state)
+{
+    auto it = m_UserId2User.find(userId);
+    if (it == m_UserId2User.end())
+        return;
+
+    std::shared_ptr<UserInfo> user = it->second;
+    user->setState(state);
+}

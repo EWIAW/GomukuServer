@@ -22,6 +22,8 @@ public:
     uint32_t getUserIdByConn(const TcpConnectionPtr &conn);                // 根据玩家连接获取玩家的ID
     TcpConnectionPtr getConnByUserId(uint32_t userId);                     // 根据玩家ID获取玩家的连接
 
+    void setUserState(uint32_t userId, UserState state); // 设置用户状态
+
 private:
     UserManager(); // 私有构造：单例模式
 

@@ -31,7 +31,6 @@ public:
 
     ~UserInfo() = default;
 
-    void setState(UserState state) { _state = state; }
     UserState getState() const { return _state; }
     std::string getUserName() const { return _userName; }
     uint32_t getUserId() const { return _userId; }
@@ -40,8 +39,10 @@ public:
     uint32_t getWinCount() const { return _winCount; }
     TcpConnectionPtr getConn() const { return _con; }
 
+    void setState(UserState state) { _state = state; }
+
 private:
-    UserState _state;      // 玩家所处的位置
+    UserState _state;      // 玩家所处的状态
     std::string _userName; // 用户名
     uint32_t _userId;      // 用户id
     uint32_t _userPoints;  // 用户积分

@@ -3,6 +3,8 @@
 #include "../base/Log.h"
 #include "../base/ProtocolId.h"
 
+#include "../db/UserDB.h"
+
 #include "../manager/ConnManager.h"
 #include "../manager/GameRoomManager.h"
 #include "../manager/UserManager.h"
@@ -18,6 +20,7 @@ GameRoomHandler::GameRoomHandler()
     DLOG("初始化GameRoomHandler模块");
     g_ProtoDisp.registerHandler(ProtocolId::GAME_CHAT_REQ, std::bind(&GameRoomHandler::onChat, this, std::placeholders::_1, std::placeholders::_2));
     g_ProtoDisp.registerHandler(ProtocolId::CHESS_DOWN_REQ, std::bind(&GameRoomHandler::onChess, this, std::placeholders::_1, std::placeholders::_2));
+    g_ProtoDisp.registerHandler(ProtocolId::EXIT_ROOM_REQ, std::bind(&GameRoomHandler::onExitRoom, this, std::placeholders::_1, std::placeholders::_2));
 }
 
 // 聊天处理请求
@@ -56,6 +59,9 @@ void GameRoomHandler::onChess(const TcpConnectionPtr &conn, const Json::Value &r
     res["y"] = y;
     if (ret == true)
     {
+        g_UserDB.winGame(sendId);
+        g_UserDB.loseGame(recvId);
+
         res["success"] = true;
         res["win"] = true;
         g_ConnMgr.sendMsg(sendConn, ProtocolId::CHESS_DOWN_ACK, res);
@@ -67,4 +73,14 @@ void GameRoomHandler::onChess(const TcpConnectionPtr &conn, const Json::Value &r
         res["success"] = false;
         g_ConnMgr.sendMsg(recvConn, ProtocolId::CHESS_DOWN_ACK, res);
     }
+}
+
+// 退出房间请求
+void GameRoomHandler::onExitRoom(const TcpConnectionPtr &conn, const Json::Value &req)
+{
+    DLOG("进入退出房间处理函数");
+    Json::Value res;
+
+    uint32_t userId = g_UserMgr.getUserIdByConn(conn);
+    g_GameRoomMgr.removeUser(userId);
 }

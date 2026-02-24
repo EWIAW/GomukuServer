@@ -5,8 +5,10 @@
 #include "../../MysqlConnectionPool/MysqlConnectionPool.h"
 
 // 所有MySQL语句
-#define REGISTER_USER "INSERT INTO users (userName, passWord, userPoint, totalCount, winCount) VALUES ('%s', SHA2('%s', 256), 1000, 0, 0);"    // 注册新用户
-#define LOGIN_USER "SELECT userId, userName, userPoint, totalCount, winCount FROM users WHERE userName = '%s' AND passWord = SHA2('%s', 256);" // 登录验证
+#define REGISTER_USER "INSERT INTO users (userName, passWord, userPoint, totalCount, winCount) VALUES ('%s', SHA2('%s', 256), 1000, 0, 0);"      // 注册新用户
+#define LOGIN_USER "SELECT userId, userName, userPoint, totalCount, winCount FROM users WHERE userName = '%s' AND passWord = SHA2('%s', 256);"   // 登录验证
+#define WIN_USER "UPDATE users SET userPoint = userPoint + 10, totalCount = totalCount + 1, winCount = winCount + 1 WHERE userId = %d;"          // 玩家获胜
+#define LOST_USER "UPDATE users SET userPoint = GREATEST(userPoint - 5, 0), totalCount = totalCount + 1, winCount = winCount WHERE userId = %d;" // 玩家失败
 
 UserDB::UserDB()
 {
@@ -62,4 +64,30 @@ std::pair<std::pair<bool, std::string>, std::vector<std::string>> UserDB::loginU
         }
         return std::make_pair(std::make_pair(true, "登录成功"), ret);
     }
+}
+
+// 游戏获胜，添加相应积分 和 添加对战场数
+void UserDB::winGame(uint32_t userId)
+{
+    // 获取数据库连接
+    MysqlConnectionPool *mcp = MysqlConnectionPool::getConnectionPool();
+    std::shared_ptr<MysqlConnection> con = mcp->getMysqlConnection();
+
+    // 修改对应信息
+    char sql[4096] = {0};
+    sprintf(sql, WIN_USER, userId);
+    MYSQL_RES *res = con->query(sql);
+}
+
+// 游戏失败，减少相应积分 和 添加对战场数
+void UserDB::loseGame(uint32_t userId)
+{
+    // 获取数据库连接
+    MysqlConnectionPool *mcp = MysqlConnectionPool::getConnectionPool();
+    std::shared_ptr<MysqlConnection> con = mcp->getMysqlConnection();
+
+    // 修改对应信息
+    char sql[4096] = {0};
+    sprintf(sql, LOST_USER, userId);
+    MYSQL_RES *res = con->query(sql);
 }
