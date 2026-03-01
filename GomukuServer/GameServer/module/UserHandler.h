@@ -13,7 +13,6 @@ public:
     void onRegister(const TcpConnectionPtr &conn, const Json::Value &req); // 处理注册请求
     void onLogin(const TcpConnectionPtr &conn, const Json::Value &req);    // 处理登录请求
 
-    // void onGetUserInfo(const TcpConnectionPtr &conn, const Json::Value &req); // 处理获取用户信息请求
 };
 
 // 全局初始化：确保启动时注册协议

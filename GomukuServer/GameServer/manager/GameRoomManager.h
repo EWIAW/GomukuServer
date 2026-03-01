@@ -21,6 +21,10 @@ public:
 
     void removeUser(uint32_t userId); // 将用户从房间中移除
 
+    uint32_t getUserIdFromOtherId(uint32_t id); // 通过一个用户的id，找到该用户房间内的另一个用户的id
+
+    bool handChess(int x, int y, uint32_t sendId); // 处理落子操作，如果出现获胜方，返回true
+
     std::shared_ptr<GameRoomInfo> getRoomByUserId(uint32_t userId); // 通过用户id获取房间信息
     std::shared_ptr<GameRoomInfo> getRoomByRoomId(uint32_t roomId); // 通过房间id获取房间信息
 

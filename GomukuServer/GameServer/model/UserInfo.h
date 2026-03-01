@@ -41,6 +41,9 @@ public:
 
     void setState(UserState state) { _state = state; }
 
+    void winGame();
+    void loseGame();
+
 private:
     UserState _state;      // 玩家所处的状态
     std::string _userName; // 用户名

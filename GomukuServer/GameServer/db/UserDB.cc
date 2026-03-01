@@ -29,10 +29,12 @@ std::pair<bool, std::string> UserDB::registerUser(const std::string username, co
     if (ret.first == false)
     {
         return std::make_pair(false, "该用户名已经存在");
+        DLOG("%s 用户注册失败", username);
     }
     else
     {
         return std::make_pair(true, "注册成功");
+        DLOG("%s 用户注册成功", username);
     }
 }
 
@@ -53,6 +55,7 @@ std::pair<std::pair<bool, std::string>, std::vector<std::string>> UserDB::loginU
     if (row_num == 0)
     {
         return std::make_pair(std::make_pair(false, "用户名或密码错误"), std::vector<std::string>());
+        DLOG("%s 用户登录失败", username);
     }
     else
     {
@@ -63,6 +66,7 @@ std::pair<std::pair<bool, std::string>, std::vector<std::string>> UserDB::loginU
             ret.push_back(row[i]);
         }
         return std::make_pair(std::make_pair(true, "登录成功"), ret);
+        DLOG("%s 用户登录成功", username);
     }
 }
 
@@ -77,6 +81,7 @@ void UserDB::winGame(uint32_t userId)
     char sql[4096] = {0};
     sprintf(sql, WIN_USER, userId);
     MYSQL_RES *res = con->query(sql);
+    DLOG("%d id用户获胜");
 }
 
 // 游戏失败，减少相应积分 和 添加对战场数
@@ -90,4 +95,5 @@ void UserDB::loseGame(uint32_t userId)
     char sql[4096] = {0};
     sprintf(sql, LOST_USER, userId);
     MYSQL_RES *res = con->query(sql);
+    DLOG("%d id用户失败");
 }

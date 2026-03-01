@@ -32,7 +32,7 @@ void GameRoomHandler::onChat(const TcpConnectionPtr &conn, const Json::Value &re
     res["message"] = message;
 
     uint32_t sendId = g_UserMgr.getUserIdByConn(conn); // 发送方ID
-    uint32_t recvId = g_GameRoomMgr.getRoomByUserId(sendId)->getOtherId(sendId);
+    uint32_t recvId = g_GameRoomMgr.getUserIdFromOtherId(sendId);
     TcpConnectionPtr sendConn = conn;
     TcpConnectionPtr recvConn = g_UserMgr.getConnByUserId(recvId);
 
@@ -44,31 +44,60 @@ void GameRoomHandler::onChess(const TcpConnectionPtr &conn, const Json::Value &r
 {
     DLOG("进入落子处理函数");
     Json::Value res;
+    Json::Value winres;
+    Json::Value loseres;
     int x = req["x"].asInt();
     int y = req["y"].asInt();
 
     uint32_t sendId = g_UserMgr.getUserIdByConn(conn); // 发送方ID
-    uint32_t recvId = g_GameRoomMgr.getRoomByUserId(sendId)->getOtherId(sendId);
+    uint32_t recvId = g_GameRoomMgr.getUserIdFromOtherId(sendId);
     TcpConnectionPtr sendConn = conn;
     TcpConnectionPtr recvConn = g_UserMgr.getConnByUserId(recvId);
 
-    std::shared_ptr<GameRoomInfo> room = g_GameRoomMgr.getRoomByUserId(sendId);
-    bool ret = room->handleChess(x, y, sendId);
+    bool ret = g_GameRoomMgr.handChess(x, y, sendId);
 
     res["x"] = x;
     res["y"] = y;
-    if (ret == true)
+
+    if (ret == true)//如果出现获胜方
     {
+        winres["x"] = x;
+        winres["y"] = y;
+        winres["success"] = true;
+        winres["win"] = true;
+
+        loseres["x"] = x;
+        loseres["y"] = y;
+        loseres["success"] = true;
+        loseres["win"] = false;
+
         g_UserDB.winGame(sendId);
         g_UserDB.loseGame(recvId);
 
-        res["success"] = true;
-        res["win"] = true;
-        g_ConnMgr.sendMsg(sendConn, ProtocolId::CHESS_DOWN_ACK, res);
-        res["win"] = false;
-        g_ConnMgr.sendMsg(recvConn, ProtocolId::CHESS_DOWN_ACK, res);
+        g_UserMgr.winGame(sendId);
+        g_UserMgr.loseGame(recvId);
+
+        //获取获胜用户的积分、总对局数、获胜场数
+        uint32_t winUserPoints = g_UserMgr.getUserPoints(sendId);
+        uint32_t winUserTotalCount = g_UserMgr.getUserTotalCount(sendId);
+        uint32_t winUserWinCount = g_UserMgr.getUserWinCount(sendId);
+
+        winres["userPoint"] = winUserPoints;
+        winres["totalCount"] = winUserTotalCount;
+        winres["winCount"] = winUserWinCount;
+        g_ConnMgr.sendMsg(sendConn, ProtocolId::CHESS_DOWN_ACK, winres);
+
+        //获取失败用户的积分、总对局数、获胜场数
+        uint32_t loseUserPoints = g_UserMgr.getUserPoints(recvId);
+        uint32_t loseUserTotalCount = g_UserMgr.getUserTotalCount(recvId);
+        uint32_t loseUserWinCount = g_UserMgr.getUserWinCount(recvId);
+
+        loseres["userPoint"] = loseUserPoints;
+        loseres["totalCount"] = loseUserTotalCount;
+        loseres["winCount"] = loseUserWinCount;
+        g_ConnMgr.sendMsg(recvConn, ProtocolId::CHESS_DOWN_ACK, loseres);
     }
-    else
+    else//如果没有出现获胜方
     {
         res["success"] = false;
         g_ConnMgr.sendMsg(recvConn, ProtocolId::CHESS_DOWN_ACK, res);

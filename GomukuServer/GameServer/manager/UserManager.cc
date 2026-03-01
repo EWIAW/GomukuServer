@@ -86,3 +86,63 @@ void UserManager::setUserState(uint32_t userId, UserState state)
     std::shared_ptr<UserInfo> user = it->second;
     user->setState(state);
 }
+
+void UserManager::winGame(uint32_t userId) //玩家获胜，修改相应用户信息
+{
+    auto it = m_UserId2User.find(userId);
+    if (it == m_UserId2User.end())
+        return;
+
+    std::shared_ptr<UserInfo> user = it->second;
+    user->winGame();
+}
+
+void UserManager::loseGame(uint32_t userId) //玩家失败，修改相应用户信息
+{
+    auto it = m_UserId2User.find(userId);
+    if (it == m_UserId2User.end())
+        return;
+
+    std::shared_ptr<UserInfo> user = it->second;
+    user->loseGame();
+}
+
+// 获取用户名
+std::string UserManager::getUserName(uint32_t userId)
+{
+    std::lock_guard<std::mutex> lock(m_mutex);
+    auto it = m_UserId2User.find(userId);
+    if (it == m_UserId2User.end())
+        return "";
+    return it->second->getUserName();
+}
+
+// 获取用户积分
+uint32_t UserManager::getUserPoints(uint32_t userId)
+{
+    std::lock_guard<std::mutex> lock(m_mutex);
+    auto it = m_UserId2User.find(userId);
+    if (it == m_UserId2User.end())
+        return 0;
+    return it->second->getUserPoints();
+}
+
+// 获取用户总对战场数
+uint32_t UserManager::getUserTotalCount(uint32_t userId)
+{
+    std::lock_guard<std::mutex> lock(m_mutex);
+    auto it = m_UserId2User.find(userId);
+    if (it == m_UserId2User.end())
+        return 0;
+    return it->second->getTotalCount();
+}
+
+// 获取用户获胜场数
+uint32_t UserManager::getUserWinCount(uint32_t userId)
+{
+    std::lock_guard<std::mutex> lock(m_mutex);
+    auto it = m_UserId2User.find(userId);
+    if (it == m_UserId2User.end())
+        return 0;
+    return it->second->getWinCount();
+}

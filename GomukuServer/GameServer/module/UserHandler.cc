@@ -73,8 +73,3 @@ void UserHandler::onLogin(const TcpConnectionPtr &conn, const Json::Value &req)
     }
     g_ConnMgr.sendMsg(conn, ProtocolId::LOGIN_ACK, res);
 }
-
-// void UserHandler::onGetUserInfo(const TcpConnectionPtr &conn, const Json::Value &req) // 处理获取用户信息请求
-// {
-//     DLOG("进入获取用户信息请求处理函数");
-// }

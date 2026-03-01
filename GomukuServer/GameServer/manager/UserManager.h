@@ -15,14 +15,23 @@ class UserManager : NonCopyable
     friend class Singleton<UserManager>;
 
 public:
-    void addOnlineUser(UserInfo *user);                                    // 添加在线玩家
-    void removeOnlineUser(uint32_t userId);                                // 移除在线玩家（下线/断连）
+    void addOnlineUser(UserInfo *user);     // 添加在线玩家
+    void removeOnlineUser(uint32_t userId); // 移除在线玩家（下线/断连）
+
     std::shared_ptr<UserInfo> getUserByUserId(uint32_t userId);            // 根据玩家ID获取玩家
     std::shared_ptr<UserInfo> getUserByconn(const TcpConnectionPtr &conn); // 根据玩家tcpconn获取玩家
     uint32_t getUserIdByConn(const TcpConnectionPtr &conn);                // 根据玩家连接获取玩家的ID
     TcpConnectionPtr getConnByUserId(uint32_t userId);                     // 根据玩家ID获取玩家的连接
 
     void setUserState(uint32_t userId, UserState state); // 设置用户状态
+
+    void winGame(uint32_t userId); //玩家获胜，修改相应用户信息
+    void loseGame(uint32_t userId); //玩家失败，修改相应用户信息
+
+    std::string getUserName(uint32_t userId);
+    uint32_t getUserPoints(uint32_t userId);
+    uint32_t getUserTotalCount(uint32_t userId);
+    uint32_t getUserWinCount(uint32_t userId);
 
 private:
     UserManager(); // 私有构造：单例模式
